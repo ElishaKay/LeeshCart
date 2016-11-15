@@ -9,6 +9,21 @@ var items = [
   {item: "glass", price: 68, img: "http://ecx.images-amazon.com/images/I/31AOX24ATKL.jpg"}
 			];
 
+//Handlebars
+
+$('.view-cart').on('click', function (e) {
+	e.preventDefault();
+	console.log("view cart button clicked")
+
+  // TODO: hide/show the shopping cart!
+  var source = $("#cart-template").html();
+  var template = Handlebars.compile(source);
+  var html = template(items); //name of the array to cycle through
+
+  $('.addedtocart').append(html);
+});
+
+
 var cart = [
   {item: "glass", price: 68, img: "http://ecx.images-amazon.com/images/I/31AOX24ATKL.jpg"}
 ];
@@ -26,25 +41,8 @@ var clearCart = function () {
   // TODO: finish
 }
 
-$('.view-cart').on('click', function () {
-  // TODO: hide/show the shopping cart!
 
-});
 
-var createBook = function (this) {
-    if (this.totalItems) {
-      var book = {
-        title: this.closest() ,
-        author: data.items[0].volumeInfo.authors[0],
-        description: data.items[0].volumeInfo.description,
-        image: data.items[0].volumeInfo.imageLinks.thumbnail,
-      }
-
-      var source = $("#book-template").html();
-      var template = Handlebars.compile(source);
-      var html = template(book);
-
-      $('.book').append(html);
 
 
 $('.add-to-cart').on('click', function (e) {

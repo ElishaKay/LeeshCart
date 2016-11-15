@@ -37,19 +37,18 @@
   </nav>
 
   <div class="page-header">
-    <h1>SHOPPING CART</h1>
+    <h1>SHOPPING CART</h1> 
+    <div class="addedtocart"></div>
 
-    <script id="book-template" type="text/x-handlebars-template">
+    <script id="cart-template" type="text/x-handlebars-template">
     <div>
-      <h1>{{title}}</h1>
-      <p>{{description}}</p>
-      <h3>Written by: {{author}}</h3>
-      <div class="body">
-        <img src="{{image}}">
+      <h1>{{item}}</h1>
+      <p>{{price}}</p>
+        <img src="{{img}}">
       </div>
     </div>
   </script>
-    
+
   </div>
 
   <div class="container">
